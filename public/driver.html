@@ -1,1 +1,136 @@
-<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Driver</title><link rel="stylesheet" href="css/app.css"></head><body><header><b>🚌 Bus 163</b><button onclick="logout()">Logout</button></header><main><div class="card"><span class="tag">DRIVER PORTAL</span><h1 id="driver">Loading...</h1><button class="btn" onclick="start()">▶ Start today's route</button><p id="msg" class="success"></p></div><div id="stops"></div><div class="card"><h2>Students</h2><div class="table"><table><thead><tr><th>Name</th><th>Stop</th><th>Travel</th><th>Status</th></tr></thead><tbody id="students"></tbody></table></div></div></main><script src="js/driver.js"></script></body></html>
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Driver Portal</title>
+
+    <link rel="stylesheet" href="css/app.css">
+</head>
+
+<body>
+
+<header>
+    <b>🚌 Bus 163</b>
+
+    <button onclick="logout()">Logout</button>
+</header>
+
+
+<main>
+
+    <!-- DRIVER INFORMATION -->
+    <div class="card">
+
+        <span class="tag">
+            DRIVER PORTAL
+        </span>
+
+        <h1 id="driver">
+            Loading...
+        </h1>
+
+        <!-- ROUTE STATUS -->
+        <p id="routeStatus">
+            Checking today's route...
+        </p>
+
+
+        <!-- START ROUTE BUTTON -->
+        <button
+            id="startBtn"
+            class="btn"
+            onclick="start()"
+        >
+            ▶ Start Today's Route
+        </button>
+
+
+        <!-- COMPLETE ROUTE BUTTON -->
+        <button
+            id="completeBtn"
+            class="btn"
+            onclick="completeRoute()"
+            style="display:none;"
+        >
+            🏁 Route Complete
+        </button>
+
+
+        <!-- MESSAGE -->
+        <p
+            id="msg"
+            class="success"
+        ></p>
+
+    </div>
+
+
+    <!-- STOPS -->
+    <div id="stops"></div>
+
+
+    <!-- STUDENTS -->
+    <div class="card">
+
+        <h2>
+            Students
+        </h2>
+
+        <p
+            id="studentInfo"
+            class="muted"
+        >
+            Today's student status
+        </p>
+
+
+        <div class="table">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>
+                            Name
+                        </th>
+
+                        <th>
+                            Stop
+                        </th>
+
+                        <th>
+                            Travel
+                        </th>
+
+                        <th>
+                            Status
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody id="students">
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</main>
+
+
+<script src="js/driver.js"></script>
+
+</body>
+
+</html>
