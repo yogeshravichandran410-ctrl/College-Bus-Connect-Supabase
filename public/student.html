@@ -1,1 +1,138 @@
-<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Student</title><link rel="stylesheet" href="css/app.css"></head><body><header><b>🚌 Bus 163</b><button onclick="logout()">Logout</button></header><main><div class="card"><span class="tag">STUDENT PORTAL</span><h1 id="name">Loading...</h1><p id="info"></p><div class="route"><b>Your stop</b><strong id="stop"></strong></div><h2>Travelling today?</h2><div class="actions"><button onclick="setStatus('travelStatus','going')">🟢 I'm Going</button><button onclick="setStatus('travelStatus','not_going')">🔴 Not Today</button></div><h2>Stop status</h2><p class="muted">Update the driver before the bus reaches your stop.</p><div class="actions"><button onclick="setStatus('stopStatus','at_stop')">🟢 I'm at the stop</button><button onclick="setStatus('stopStatus','coming')">🟡 I'm coming</button></div><p id="msg" class="success"></p></div></main><script src="js/student.js"></script></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Student</title>
+    <link rel="stylesheet" href="css/app.css">
+</head>
+
+<body>
+
+<header>
+    <b>🚌 Bus 163</b>
+
+    <div>
+        <button onclick="showHome()">🏠 Home</button>
+        <button onclick="showGPS()">📍 GPS</button>
+        <button onclick="logout()">Logout</button>
+    </div>
+</header>
+
+<main>
+
+    <!-- ================= HOME SECTION ================= -->
+    <div id="homeSection">
+
+        <div class="card">
+
+            <span class="tag">STUDENT PORTAL</span>
+
+            <h1 id="name">Loading...</h1>
+
+            <p id="info"></p>
+
+            <div class="route">
+                <b>Your stop</b>
+                <strong id="stop"></strong>
+            </div>
+
+            <h2>Travelling today?</h2>
+
+            <div class="actions">
+                <button onclick="setStatus('travelStatus','going')">
+                    🟢 I'm Going
+                </button>
+
+                <button onclick="setStatus('travelStatus','not_going')">
+                    🔴 Not Today
+                </button>
+            </div>
+
+            <h2>Stop status</h2>
+
+            <p class="muted">
+                Update the driver before the bus reaches your stop.
+            </p>
+
+            <div class="actions">
+                <button onclick="setStatus('stopStatus','at_stop')">
+                    🟢 I'm at the stop
+                </button>
+
+                <button onclick="setStatus('stopStatus','coming')">
+                    🟡 I'm coming
+                </button>
+            </div>
+
+            <p id="msg" class="success"></p>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= GPS SECTION ================= -->
+    <div id="gpsSection" style="display:none;">
+
+        <div class="card">
+
+            <span class="tag">LIVE BUS TRACKING</span>
+
+            <h1>📍 Live Bus GPS</h1>
+
+            <p class="muted">
+                Track Bus 163's current location below.
+            </p>
+
+            <div style="
+                width:100%;
+                height:650px;
+                overflow:hidden;
+                border-radius:12px;
+                margin-top:20px;
+            ">
+
+                <iframe
+                    src="https://app.gpstrack.in/url/MkwKfBl4"
+                    width="100%"
+                    height="100%"
+                    style="border:0;"
+                    allow="geolocation"
+                    loading="lazy">
+                </iframe>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</main>
+
+
+<script src="js/student.js"></script>
+
+<script>
+
+    function showGPS() {
+
+        document.getElementById("homeSection").style.display = "none";
+
+        document.getElementById("gpsSection").style.display = "block";
+
+    }
+
+
+    function showHome() {
+
+        document.getElementById("gpsSection").style.display = "none";
+
+        document.getElementById("homeSection").style.display = "block";
+
+    }
+
+</script>
+
+</body>
+</html>
